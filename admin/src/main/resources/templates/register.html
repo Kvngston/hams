@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hostel Management System</title>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body>
+<section class="offset-3 col-md-6" style="margin-top: 100px;">
+    <div class="">
+        <h2 class="text-primary" style="text-align: center;">Register</h2>
+    </div>
+    <div class="col-md-12">
+        <form method="post" action="/register" th:action="@{/addStudent}" th:object="${student}">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" th:field="*{firstName}" class="form-control" id="firstname" name="firstname" aria-describedby="firstname" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+                <label for="middlename">Middle Name</label>
+                <input type="text" th:field="*{middleName}" class="form-control" id="middlename" name="middlename" aria-describedby="middlename" placeholder="Enter Middle Name">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" th:field="*{lastName}" class="form-control" id="lastname" name="lastname" aria-describedby="lastname" placeholder="Enter Last Name">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="text" th:field="*{age}" class="form-control" id="age" name="age" aria-describedby="age" placeholder="Enter Age">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="text" th:field="*{gender}" class="form-control" id="gender" name="gender" aria-describedby="gender" placeholder="Enter gender">
+            </div>
+            <div class="form-group">
+                <label for="RegNo">Registration Number</label>
+                <input type="text" th:field="*{regNo}" class="form-control" id="RegNo" name="RegNo" aria-describedby="RegNo" placeholder="Enter Registration Number">
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input type="text" th:field="*{department}" class="form-control" id="department" name="department" aria-describedby="department" placeholder="Enter Department">
+            </div>
+            <div class="form-group">
+                <label for="faculty">Faculty</label>
+                <input type="text" th:field="*{faculty}" class="form-control" id="faculty" name="faculty" aria-describedby="faculty" placeholder="Enter Faculty">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" th:field="*{password}" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="confPass">Confirm Password</label>
+                <input type="password" class="form-control" id="confPass" name="confPass" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="btn btn-success form-control">Register</button>
+        </form>
+    </div>
+
+</section>
+
+
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.js"></script>
+</body>
+</html>

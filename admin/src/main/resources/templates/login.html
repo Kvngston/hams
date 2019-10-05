@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hostel Management System</title>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body>
+    <section class="offset-3 col-md-6" style="margin-top: 180px;">
+        <div class="">
+            <h2 class="text-primary" style="text-align: center;">Login</h2>
+        </div>
+        <div class="col-md-12">
+            <form method="post" action="/login" th:action="@{/login}">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="text" class="form-control" id="email" name="username" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-success">Login</button>
+                <a class="btn btn-danger bg-white pull-right" th:href="@{/register}">Register</a>
+              </form>
+        </div>
+
+    </section>
+
+
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.js"></script>
+</body>
+</html>
