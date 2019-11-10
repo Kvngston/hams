@@ -3,6 +3,7 @@ package com.example.hams.Domain;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 public class Student implements Serializable  {
@@ -47,21 +48,28 @@ public class Student implements Serializable  {
     @JoinColumn(name = "floor_id")
     private Floor floor;
 
+    @OneToMany
+    private Set<Complaint> studentComplaints;
+
+
     public Student() {
     }
 
-    public Student(String firstName, String middleName, String lastName, int age, String gender, @Size(max = 10) String regNo,String password, String department, String faculty, String roomNumber, Role role) {
+    public Student(String firstName, String middleName, String lastName, int age, String gender, @Size(max = 10) String regNo, String department, String faculty, String roomNumber, String password, Role role, Room room, Floor floor, Set<Complaint> studentComplaints) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.age = age;
         this.gender = gender;
         this.regNo = regNo;
-        this.password = password;
         this.department = department;
         this.faculty = faculty;
         this.roomNumber = roomNumber;
+        this.password = password;
         this.role = role;
+        this.room = room;
+        this.floor = floor;
+        this.studentComplaints = studentComplaints;
     }
 
     public long getId() {
@@ -102,6 +110,14 @@ public class Student implements Serializable  {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Set<Complaint> getStudentComplaints() {
+        return studentComplaints;
+    }
+
+    public void setStudentComplaints(Set<Complaint> studentComplaints) {
+        this.studentComplaints = studentComplaints;
     }
 
     public String getPassword(){

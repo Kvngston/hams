@@ -21,7 +21,15 @@ public class dashboardController {
 
         Student loggedInStudent = studentRepository.findByRegNo(principal.getName());
 
+        if(loggedInStudent.getRoomNumber() == null){
+            model.addAttribute("booked",false);
+        }else{
+            model.addAttribute("booked", true);
+        }
+
         model.addAttribute("student", loggedInStudent);
         return "dashboard";
     }
+
 }
+

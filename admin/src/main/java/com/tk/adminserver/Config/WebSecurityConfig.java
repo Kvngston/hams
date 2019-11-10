@@ -30,13 +30,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
         http
                 .authorizeRequests()
-                .antMatchers("/index").authenticated() // any url that isnt the ant matchers users can't access the page and it runs only when authenticated
+                .antMatchers("/index","/dashboard").authenticated() // any url that isnt the ant matchers users can't access the page and it runs only when authenticated
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
-                .defaultSuccessUrl("/list", true)
+                .defaultSuccessUrl("/dashboard", true)
                 .and()
                 .logout()
                 .permitAll();

@@ -68,21 +68,21 @@ public class AdminServerApplication implements CommandLineRunner {
 
         for(int i = 0; i < 42; i++){
             Room room = new Room();
-            room.setName("Room "+ (i+1));
+            room.setName("Room"+ (i+1));
             room.setFloor(floorRepository.findByFloorName("Ground Floor"));
             roomRepository.save(room);
         }
 
         for(int i = 0; i < 42; i++){
             Room room = new Room();
-            room.setName("Room "+ (i+1));
+            room.setName("Room"+ (i+1));
             room.setFloor(floor2);
             roomRepository.save(room);
         }
 
-        for(int i = 0; i < 14; i++){
+        for(int i = 0; i < 42; i++){
             Room room = new Room();
-            room.setName("Room "+ (i+1));
+            room.setName("Room"+ (i+1));
             room.setFloor(floor3);
             roomRepository.save(room);
         }

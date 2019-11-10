@@ -22,13 +22,15 @@
         </aside>
         <div class="col-md-9" style="background: white;">
             <div class="row">
-                <div class="col-md-4 dashboardBackgrounds">
-                    <a style="color: white" th:href="@{/bookRoom}"><h2 style="margin-top: 25%;">Book A room</h2></a>
+                <div th:if="${booked} == false" class="col-md-4 dashboardBackgrounds">
+                    <a  style="color: white" th:href="@{/bookRoom}"><h2 style="margin-top: 25%;">Book A room</h2></a>
                 </div>
                 <div class="col-md-4 dashboardBackgrounds">
                     <a style="color: white" th:href="@{/layComplaint}"><h2 style="margin-top: 25%;">Lay A complaint</h2></a>
                 </div>
-                <div class="col-md-4 dashboardBackgrounds"></div>
+                <div class="col-md-4 dashboardBackgrounds">
+                    <a style="color: white" th:href="@{/roomDetails}"><h2 style="margin-top: 25%;">Check Room Details</h2></a>
+                </div>
             </div>
         </div>
     </section>

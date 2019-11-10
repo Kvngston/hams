@@ -12,39 +12,14 @@
         <h2 class="text-primary" style="text-align: center;">Register</h2>
     </div>
     <div class="col-md-12">
-        <form method="post" action="/register" th:action="@{/addStudent}" th:object="${student}">
+        <form method="post" action="/register" th:action="@{/addUser}" th:object="${user}">
             <div class="form-group">
-                <label for="firstname">First Name</label>
-                <input type="text" th:field="*{firstName}" class="form-control" id="firstname" name="firstname" aria-describedby="firstname" placeholder="Enter First Name">
+                <label for="email">First Name</label>
+                <input type="text" th:field="*{email}" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Enter your Email">
             </div>
             <div class="form-group">
-                <label for="middlename">Middle Name</label>
-                <input type="text" th:field="*{middleName}" class="form-control" id="middlename" name="middlename" aria-describedby="middlename" placeholder="Enter Middle Name">
-            </div>
-            <div class="form-group">
-                <label for="lastname">Last Name</label>
-                <input type="text" th:field="*{lastName}" class="form-control" id="lastname" name="lastname" aria-describedby="lastname" placeholder="Enter Last Name">
-            </div>
-
-            <div class="form-group">
-                <label for="age">Age</label>
-                <input type="text" th:field="*{age}" class="form-control" id="age" name="age" aria-describedby="age" placeholder="Enter Age">
-            </div>
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <input type="text" th:field="*{gender}" class="form-control" id="gender" name="gender" aria-describedby="gender" placeholder="Enter gender">
-            </div>
-            <div class="form-group">
-                <label for="RegNo">Registration Number</label>
-                <input type="text" th:field="*{regNo}" class="form-control" id="RegNo" name="RegNo" aria-describedby="RegNo" placeholder="Enter Registration Number">
-            </div>
-            <div class="form-group">
-                <label for="department">Department</label>
-                <input type="text" th:field="*{department}" class="form-control" id="department" name="department" aria-describedby="department" placeholder="Enter Department">
-            </div>
-            <div class="form-group">
-                <label for="faculty">Faculty</label>
-                <input type="text" th:field="*{faculty}" class="form-control" id="faculty" name="faculty" aria-describedby="faculty" placeholder="Enter Faculty">
+                <label for="userName">Middle Name</label>
+                <input type="text" th:field="*{userName}" class="form-control" id="userName" name="userName" aria-describedby="userName" placeholder="Enter your UserName">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>

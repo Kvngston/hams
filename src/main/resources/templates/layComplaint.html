@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hostel Management System</title>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body style="padding: 0; margin: 0px;" class="container-fluid">
+    <header class="col-md-12" style="background: black">
+        <nav class="nav navbar">
+            <h2 class="text-primary">Nnamdi Azikiwe Hostels</h2>
+            <a class="text-white pull-right" th:href="@{/logout}">Logout</a>
+        </nav>
+    </header>
+    <section class="row">
+        <div class="container">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <form action="/Complain" th:action="@{/layComplaint}" th:object="${complaint}" method="POST">
+                        <div class="form-group">
+                            <label for="Message">Message</label>
+                            <input type="text" class="form-control" id="Message" th:field="*{message}" name="Message" aria-describedby="Message" placeholder="Enter Your Complaint">
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Enter Your Email</label>
+                            <input class="form-control" type="text" name="Email" id="Email" placeholder="Email Address to receive "/>
+                        </div>
+                        <button class="btn btn-success pull-right" type="submit" >Complain</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

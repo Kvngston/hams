@@ -67,4 +67,12 @@ public class Floor {
     public void setFloorRooms(Set<Room> floorRooms) {
         this.floorRooms = floorRooms;
     }
+
+    @Override
+    public String toString() {
+        return "Floor{" +
+                "id=" + id +
+                ", floorName='" + floorName + '\'' +
+                '}';
+    }
 }

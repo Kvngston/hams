@@ -13,12 +13,15 @@ public class Room implements Serializable {
 
     private String name;
 
+    @OrderColumn
     @OneToMany(
             fetch = FetchType.EAGER,
             mappedBy = "room",
             cascade = CascadeType.ALL
     )
     private Set<Student> roommates;
+
+    private int capacity = 0;
 
     @ManyToOne
     @JoinColumn(name = "floor_id")
@@ -27,9 +30,10 @@ public class Room implements Serializable {
     public Room() {
     }
 
-    public Room(String name, Set<Student> roommates, Floor floor) {
+    public Room(String name, Set<Student> roommates, int capacity, Floor floor) {
         this.name = name;
         this.roommates = roommates;
+        this.capacity = capacity;
         this.floor = floor;
     }
 
@@ -57,11 +61,30 @@ public class Room implements Serializable {
         this.roommates = roommates;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
     public Floor getFloor() {
         return floor;
     }
 
     public void setFloor(Floor floor) {
         this.floor = floor;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", roommates=" + roommates +
+                ", capacity=" + capacity +
+                ", floor=" + floor +
+                '}';
     }
 }

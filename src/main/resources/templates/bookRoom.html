@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Hostel Management System</title>
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
 
 </head>
 <body>
@@ -14,7 +15,37 @@
         <a class="text-white pull-right" th:href="@{/logout}">Logout</a>
     </nav>
 </header>
-<section class="jumbotron"></section>
+<section class="jumbotron container">
+    <form method="post" action="/book" th:action="@{/book}" th:object="${bookingDetails}">
+<!--        <div class="form-group">-->
+<!--            <select class="form-control" name="confirmedFloor" required>-->
+<!--                <option value="" selected="selected" disabled> Please select a floor...</option>-->
+<!--                <option th:each="floor : ${floorsList}"-->
+<!--                        value="floors" th:value="${floor.id}" th:text="${floor.floorName}"></option>-->
+<!--            </select>-->
+<!--            <a th:href="@{/selectRoom}" class="btn btn-danger">Select Floor</a>-->
+<!--        </div>-->
+        <div class="form-group">
+            <div class="row jumbotron">
+                <div class="col-md-8 offset-4">
+                    <form action="/selectRoom" th:action="@{/book}" method="POST">
+                        <select class="form-control" name="confirmedFloor" required>
+                            <option value="" selected="selected" disabled> Please select a floor...</option>
+                            <option value="First Floor">First Floor</option>
+                            <option value="Second Floor">Second Floor</option>
+                            <option value="Ground Floor">Ground Floor</option>
+                        </select>
+                        <select class="form-control" name="confirmedRoom" required>
+                            <option value="" selected="selected" disabled> Please select a room...</option>
+                            <option value="" th:value="Room +${i}" th:each="i : ${#numbers.sequence(1,42,1)}" th:text="Room +${i}"></option>
+                        </select>
+                        <button class="btn btn-success pull-right" style="margin-top:10px; margin-bottom: 10px;" type="submit" >Book Room</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
 
 <script src="js/bootstrap.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>

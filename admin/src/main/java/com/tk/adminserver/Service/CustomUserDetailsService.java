@@ -17,8 +17,8 @@ public class CustomUserDetailsService implements UserDetailsService {
     private String  emailRegex = "[a-zA-Z0-9]{2,}@[a-zA-Z]{2,}.com";
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(username);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email);
         System.out.println(user);
         CustomUserDetails userDetails;
 
@@ -27,7 +27,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             System.out.println(user);
             userDetails.setUser(user);
         } else {
-            throw new UsernameNotFoundException("User with email " + username + "does not exist");
+            throw new UsernameNotFoundException("User with email " + email + "does not exist");
         }
 
         return userDetails;
