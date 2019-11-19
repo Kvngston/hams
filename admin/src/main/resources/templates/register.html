@@ -2,42 +2,54 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/chizzy.min.css" type="text/css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
     <title>Hostel Management System</title>
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
-
 </head>
-<body>
-<section class="offset-3 col-md-6" style="margin-top: 100px;">
-    <div class="">
-        <h2 class="text-primary" style="text-align: center;">Register</h2>
+<body class="home">
+<div class="container" style="height: 90vh">
+    <div class="center">
+        <div class="login-body w-75">
+            <div class="icon-container blue" style="height:100%">
+                <div class="center">
+                    <i class="fa fa-user fa-5x text-white"></i>
+                </div>
+            </div>
+            <div class="form-container p-2" style="height:93.6%; opacity: 0.8">
+                <form class="w-60 center" method="post" style="margin: auto" action="/register" th:action="@{/addUser}" th:object="${user}">
+                    <div class="form-group p-3">
+                        <div class="form-inline">
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="text" th:field="*{email}" id="email" class="form-input">
+                            </div>
+                            <div>
+                                <label for="userName">Username</label>
+                                <input type="text" th:field="*{userName}" id="userName" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div>
+                                <label for="password">Password</label>
+                                <input type="password" th:field="*{password}" id="password" class="form-input">
+                            </div>
+                            <div>
+                                <label for="confPass">Confirm Password</label>
+                                <input type="password" id="confPass" name="confPass" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <input type="submit" value="Register" class="btn btn-blue btn-block mr-2">
+                            <a th:href="@{/login}" class="btn btn-red btn-block">Login</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="col-md-12">
-        <form method="post" action="/register" th:action="@{/addUser}" th:object="${user}">
-            <div class="form-group">
-                <label for="email">First Name</label>
-                <input type="text" th:field="*{email}" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Enter your Email">
-            </div>
-            <div class="form-group">
-                <label for="userName">Middle Name</label>
-                <input type="text" th:field="*{userName}" class="form-control" id="userName" name="userName" aria-describedby="userName" placeholder="Enter your UserName">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" th:field="*{password}" class="form-control" id="password" name="password" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <label for="confPass">Confirm Password</label>
-                <input type="password" class="form-control" id="confPass" name="confPass" placeholder="Confirm Password">
-            </div>
-            <button type="submit" class="btn btn-success form-control">Register</button>
-        </form>
-    </div>
-
-</section>
-
-
-<script src="js/bootstrap.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery.js"></script>
+</div>
 </body>
 </html>

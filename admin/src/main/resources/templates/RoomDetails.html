@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hostel Management System</title>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body style="padding: 0; margin: 0px;" class="container-fluid">
+    <header class="col-md-12" style="background: black">
+        <nav class="nav navbar">
+            <h2 class="text-primary">Nnamdi Azikiwe Hostels Admin portal</h2>
+            <a class="text-white pull-right" th:href="@{/dashboard}">Back to Dashboard</a>
+            <a class="text-white pull-right" th:href="@{/logout}">Logout</a>
+        </nav>
+    </header>
+    <section class="container searchArea">
+        <div class="col-md-12 offset-5">
+            <form class="form-inline" action="/checkRoom" th:action="@{/checkRoom}" method="post">
+                <div class="form-group">
+                    <select class="form-control" name="floor" required>
+                        <option value="" selected="selected" disabled> Please select a floor...</option>
+                        <option value="First Floor">First Floor</option>
+                        <option value="Second Floor">Second Floor</option>
+                        <option value="Ground Floor">Ground Floor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input class="form-control" type="number" placeholder="Room Number" name="roomNumber"/>
+                    </label>
+                </div>
+                <div class="form-group form-check-inline">
+                    <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i>&nbsp;Check</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="container studentArea" >
+        <div class="" th:if="${notEmpty} == true">
+            <h1 th:text="${room.name}"></h1>
+            <p>Room Capacity = 4</p>
+            <h3 th:text=" 'Occupied Spaces: '+${room.capacity}"></h3>
+            <div th:each="student: ${roomMates}">
+                <p th:text=" 'Mate: '+${student.lastName}"></p>
+                <p th:text="${student.firstName}"></p>
+                <p th:text="${student.regNo}"></p>
+                <p th:text="${student.department}"></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

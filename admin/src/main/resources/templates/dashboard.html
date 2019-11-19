@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Hostel Management System</title>
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
 
 </head>
 <body style="padding: 0; margin: 0px;" class="container-fluid">
@@ -22,10 +23,16 @@
     <div class="col-md-9" style="background: white;">
         <div class="row">
             <div class="col-md-4 dashboardBackgrounds">
-                <a style="color: white" th:href="@{/layComplaint}"><h2 style="margin-top: 25%;">Lay A complaint</h2></a>
+                <a style="color: white" th:href="@{/viewStudentDetails}"><h2 style="margin-top: 25%;">Review A Student</h2></a>
             </div>
             <div class="col-md-4 dashboardBackgrounds">
-                <a style="color: white" th:href="@{/roomDetails}"><h2 style="margin-top: 25%;">Check Room Details</h2></a>
+                <a style="color: white" th:href="@{/viewRoom}"><h2 style="margin-top: 25%;">Check Room Details</h2></a>
+            </div>
+            <div class="col-md-4 dashboardBackgrounds">
+                <a style="color: white" th:href="@{/viewFloorDetails}"><h2 style="margin-top: 25%;">View Floor Details</h2></a>
+            </div>
+            <div class="col-md-4 dashboardBackgrounds">
+                <a style="color: white" th:href="@{/viewComplaints}"><h2 style="margin-top: 25%;">View Complaints</h2></a>
             </div>
         </div>
     </div>

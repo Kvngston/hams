@@ -2,35 +2,42 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/chizzy.min.css" type="text/css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
     <title>Hostel Management System</title>
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
-
 </head>
-<body>
-    <section class="offset-3 col-md-6" style="margin-top: 180px;">
-        <div class="">
-            <h2 class="text-primary" style="text-align: center;">Login</h2>
-        </div>
-        <div class="col-md-12">
-            <form method="post" action="/login" th:action="@{/login}">
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="text" class="form-control" name="username" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+<body class="home">
+<div class="container" style="height: 90vh">
+    <div class="center">
+        <div class="login-body w-75">
+            <div class="icon-container blue" style="height:100%">
+                <div class="center">
+                    <i class="fa fa-user fa-5x text-white"></i>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+            </div>
+            <div class="form-container" style="height:100%; opacity: 0.8">
+                <div class="center opacy">
+                    <form class="w-60 opacy" method="post" action="/login" th:action="@{/login}">
+                        <div class="form-group opacy p-3">
+                            <label for="username">Registration Number</label>
+                            <input type="text" name="username" id="username" class="form-input" required>
+
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-input" required>
+
+                            <div class="form-inline opacy">
+                                <input type="submit" value="Login" class="btn btn-blue btn-block mr-2">
+                                <a th:href="@{/register}" class="btn btn-red btn-block">register</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-success">Login</button>
-                <a class="btn btn-danger bg-white pull-right" style="color: black;" th:href="@{/register}">Register</a>
-              </form>
+            </div>
         </div>
-
-    </section>
-
-
-<script src="js/bootstrap.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery.js"></script>
+    </div>
+</div>
 </body>
 </html>

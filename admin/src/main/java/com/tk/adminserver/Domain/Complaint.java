@@ -15,15 +15,19 @@ public class Complaint {
     @Email
     private String email;
 
+    @Column(nullable = false)
+    private int attendedTo;
+
     @ManyToOne
     private Student student;
 
     public Complaint() {
     }
 
-    public Complaint(String message, String email, Student student) {
+    public Complaint(String message, @Email String email, int completed, Student student) {
         this.message = message;
         this.email = email;
+        this.attendedTo = completed;
         this.student = student;
     }
 
@@ -59,12 +63,21 @@ public class Complaint {
         this.email = email;
     }
 
+    public int getAttendedTo() {
+        return attendedTo;
+    }
+
+    public void setAttendedTo(int attendedTo) {
+        this.attendedTo = attendedTo;
+    }
+
     @Override
     public String toString() {
         return "Complaint{" +
                 "id=" + id +
                 ", message='" + message + '\'' +
                 ", email='" + email + '\'' +
+                ", completed=" + attendedTo +
                 ", student=" + student +
                 '}';
     }

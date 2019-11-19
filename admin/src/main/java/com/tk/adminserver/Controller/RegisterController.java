@@ -55,6 +55,6 @@ public class RegisterController {
         }
 
 
-        return "dashboard";
+        return "login";
     }
 }

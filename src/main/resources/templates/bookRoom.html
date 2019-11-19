@@ -17,14 +17,6 @@
 </header>
 <section class="jumbotron container">
     <form method="post" action="/book" th:action="@{/book}" th:object="${bookingDetails}">
-<!--        <div class="form-group">-->
-<!--            <select class="form-control" name="confirmedFloor" required>-->
-<!--                <option value="" selected="selected" disabled> Please select a floor...</option>-->
-<!--                <option th:each="floor : ${floorsList}"-->
-<!--                        value="floors" th:value="${floor.id}" th:text="${floor.floorName}"></option>-->
-<!--            </select>-->
-<!--            <a th:href="@{/selectRoom}" class="btn btn-danger">Select Floor</a>-->
-<!--        </div>-->
         <div class="form-group">
             <div class="row jumbotron">
                 <div class="col-md-8 offset-4">

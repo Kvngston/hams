@@ -19,12 +19,10 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email);
-        System.out.println(user);
         CustomUserDetails userDetails;
 
         if (user != null) {
             userDetails = new CustomUserDetails();
-            System.out.println(user);
             userDetails.setUser(user);
         } else {
             throw new UsernameNotFoundException("User with email " + email + "does not exist");

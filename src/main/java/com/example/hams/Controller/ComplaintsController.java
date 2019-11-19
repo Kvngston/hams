@@ -47,6 +47,7 @@ public class ComplaintsController  {
         }else{
             complaint.setEmail(email);
             complaint.setStudent(loggedInStudent);
+            complaint.setAttendedTo(0);
             complaintRepository.save(complaint);
         }
 

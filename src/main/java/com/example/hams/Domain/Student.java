@@ -51,7 +51,6 @@ public class Student implements Serializable  {
     @OneToMany
     private Set<Complaint> studentComplaints;
 
-
     public Student() {
     }
 

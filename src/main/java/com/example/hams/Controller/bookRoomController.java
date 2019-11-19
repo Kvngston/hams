@@ -54,16 +54,17 @@ public class bookRoomController {
     @RequestMapping(value = "/book", method = RequestMethod.POST)
     public String selectRoom(Principal principal, @RequestParam("confirmedFloor")  String confirmedFloor,@RequestParam("confirmedRoom")  String confirmedRoom,  Model model){
 
+        Student loggedInStudent = studentRepository.findByRegNo(principal.getName());
         Set<Student> roomates = new HashSet<>();
 
         System.out.println("this is the confirmed floor"+ confirmedFloor);
         System.out.println("this is the confirmed floor"+ confirmedRoom);
 
-        Student loggedInStudent = studentRepository.findByRegNo(principal.getName());
+
         loggedInStudent.setFloor(floorRepository.findByFloorName(confirmedFloor));
         loggedInStudent.setRoom(roomRepository.findByNameAndFloor(confirmedRoom, loggedInStudent.getFloor()));
         loggedInStudent.setRoomNumber(confirmedRoom);
-
+        loggedInStudent.getRoom().setCapacity(loggedInStudent.getRoom().getCapacity() + 1);
         if(loggedInStudent.getRoom().getRoommates().size() < 5) {
             roomates.add(loggedInStudent);
             loggedInStudent.getRoom().setRoommates(roomates);
@@ -73,6 +74,7 @@ public class bookRoomController {
 
 
         studentRepository.save(loggedInStudent);
+        roomRepository.save(loggedInStudent.getRoom());
         System.out.println(loggedInStudent);
         return "redirect:/dashboard";
     }

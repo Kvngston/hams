@@ -30,7 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
         http
                 .authorizeRequests()
-                .antMatchers("/index","/dashboard").authenticated() // any url that isnt the ant matchers users can't access the page and it runs only when authenticated
+                .antMatchers("/dashboard", "/checkRoom","/viewRoom","/checkStudent","/viewStudentDetails","/checkFloor","/viewFloorDetails","/viewComplaints").authenticated() // any url that isnt the ant matchers users can't access the page and it runs only when authenticated
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()

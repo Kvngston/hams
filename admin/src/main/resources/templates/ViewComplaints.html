@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hostel Management System</title>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body style="padding: 0; margin: 0px;" class="container-fluid">
+    <header class="col-md-12" style="background: black">
+        <nav class="nav navbar">
+            <h2 class="text-primary">Nnamdi Azikiwe Hostels Admin portal</h2>
+            <a class="text-white pull-right" th:href="@{/dashboard}">Back to Dashboard</a>
+            <a class="text-white pull-right" th:href="@{/logout}">Logout</a>
+        </nav>
+    </header>
+    <section class="container studentArea">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th style="text-align: center;">No. </th>
+                <th style="text-align: center;">Complaint</th>
+                <th style="text-align: center;">Email</th>
+                <th style="text-align: center;">Student</th>
+                <th style="text-align: center;">Attended To</th>
+            </tr>
+            </thead>
+            <tbody id="body" style="background-color: whitesmoke;">
+            <tr th:each="complaint, iterStat:${complaints}">
+                <td th:text="${iterStat.count}"></td>
+                <td>
+                    <div>
+                        <p th:text="${complaint.message}"></p>
+                    </div>
+                </td>
+                <td>
+                    <p th:text="${complaint.email}"></p>
+                </td>
+                <td>
+                    <p th:text="${complaint.student.firstName}+ ' ' + ${complaint.student.lastName}+ ' ' + ${complaint.student.roomNumber}"></p>
+                </td>
+                <td>
+                    <a th:if="${complaint.attendedTo} == 0" href="/attendedTo"
+                       th:href="@{/attendedTo__${complaint.id}__}" class="btn btn-info bn-sm btn-danger"><span
+                            class="glyphicon glyphicon-user"> </span> not attended to </a>
+                    <a th:if="${complaint.attendedTo} == 1" href="/attendedTo"
+                       th:href="@{/attendedTo__${complaint.id}__}" class="btn btn-info bn-sm btn-success"><span
+                            class="glyphicon glyphicon-user"> </span> Attended to </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>
