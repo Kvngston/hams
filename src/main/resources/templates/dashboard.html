@@ -3,36 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Hostel Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
     <link href="css/style.css" type="text/css" rel="stylesheet"/>
 
 </head>
-<body style="padding: 0; margin: 0px;" class="container-fluid">
+<body style="padding: 0; margin: 0; background: url('https://res.cloudinary.com/dm9m9lutv/image/upload/c_scale,e_blur:1104,h_743,w_1366/v1574085456/IMG_E4216_sxhjbx.png') no-repeat" class="container-fluid home">
     <header class="col-md-12" style="background: black">
         <nav class="nav navbar">
-            <h2 class="text-primary">Nnamdi Azikiwe Hostels</h2>
+            <h2 class="text-white">Nnamdi Azikiwe Hostels</h2>
             <a class="text-white pull-right" th:href="@{/logout}">Logout</a>
         </nav>
     </header>
-    <section class="col-md-12 row" style="height: 100%;">
-        <aside class="col-md-3" style="background: black;">
-            <div class="col-md-12">
-                <h3 class="text-white">DashBoard</h3>
+    <section class="container" style="height: 100%;">
+        <div class="studentArea row" style="background: white; padding: 0;">
+            <div class="col-md-3" style="height: inherit;">
+                <figure class="figure col-md-12">
+                    <img style="margin-left: 25%; margin-top: 40%" src="https://res.cloudinary.com/dm9m9lutv/image/upload/v1574262968/unizikLogo_njgybk.png">
+                    <figcaption style="font-size: 20px;" class="text-center text-white">Dashboard</figcaption>
+                </figure>
             </div>
-        </aside>
-        <div class="col-md-9" style="background: white;">
-            <div class="row">
+            <div class="col-md-9 row" style="background: white">
                 <div th:if="${booked} == false" class="col-md-4 dashboardBackgrounds">
-                    <a  style="color: white" th:href="@{/bookRoom}"><h2 style="margin-top: 25%;">Book A room</h2></a>
+                    <div class="dashboardIcons">
+                        <img style="margin-top: 25%" height="75px" width="75px" src="https://res.cloudinary.com/dm9m9lutv/image/upload/c_scale,h_159,w_214/v1574283972/door-openstyle_solid_xzwkcq.svg">
+                        <a th:href="@{/bookRoom}" style="color: black; "><h2 style="margin-top: 25%;">Book A room</h2></a>
+                    </div>
                 </div>
                 <div class="col-md-4 dashboardBackgrounds">
-                    <a style="color: white" th:href="@{/complaint}"><h2 style="margin-top: 25%;">Lay A complaint</h2></a>
+                    <div class="dashboardIcons">
+                        <a style="text-decoration: none;" th:href="@{/complaint}"><img height="75px" style="margin-top: 35%" width="75px" src="https://res.cloudinary.com/dm9m9lutv/image/upload/v1574286022/pencil-alt-solid_nrekk2.svg">
+                        <h2>Lay A complaint</h2></a>
+                    </div>
                 </div>
                 <div class="col-md-4 dashboardBackgrounds">
-                    <a style="color: white" th:href="@{/roomDetails}"><h2 style="margin-top: 25%;">Check Room Details</h2></a>
+                    <div class="dashboardIcons">
+                        <a th:href="@{/roomDetails}" style="text-decoration: none;"><img height="75px" style="margin-top: 34%" width="75px" src="https://res.cloudinary.com/dm9m9lutv/image/upload/v1574286093/info-circle-solid_p6p2c8.svg">
+                        <h2>Check Room Details</h2></a>
+                    </div>
+
                 </div>
             </div>
         </div>
+
     </section>
 
 

@@ -7,15 +7,15 @@
     <link href="css/style.css" type="text/css" rel="stylesheet">
 
 </head>
-<body>
+<body style="background: url('https://res.cloudinary.com/dm9m9lutv/image/upload/c_scale,e_blur:1104,h_743,w_1366/v1574085456/IMG_E4216_sxhjbx.png') no-repeat">
 
 <header class="col-md-12" style="background: black">
     <nav class="nav navbar">
-        <h2 class="text-primary">Nnamdi Azikiwe Hostels</h2>
+        <h2 class="text-white">Nnamdi Azikiwe Hostels</h2>
         <a class="text-white pull-right" th:href="@{/logout}">Logout</a>
     </nav>
 </header>
-<section class="jumbotron container">
+<section class="studentArea container" style="padding: 40px;">
     <form method="post" action="/book" th:action="@{/book}" th:object="${bookingDetails}">
         <div class="form-group">
             <div class="row jumbotron">

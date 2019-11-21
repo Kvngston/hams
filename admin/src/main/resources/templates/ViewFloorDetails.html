@@ -7,10 +7,10 @@
     <link href="css/style.css" type="text/css" rel="stylesheet"/>
 
 </head>
-<body style="padding: 0; margin: 0;" class="container-fluid">
+<body style="padding: 0; margin: 0; background: url('https://res.cloudinary.com/dm9m9lutv/image/upload/c_scale,e_blur:1104,h_743,w_1366/v1574085456/IMG_E4216_sxhjbx.png') no-repeat" class="container-fluid">
     <header class="col-md-12" style="background: black">
         <nav class="nav navbar">
-            <h2 class="text-primary">Nnamdi Azikiwe Hostels Admin portal</h2>
+            <h2 class="text-white">Nnamdi Azikiwe Hostels Admin portal</h2>
             <a class="text-white pull-right" th:href="@{/dashboard}">Back to Dashboard</a>
             <a class="text-white pull-right" th:href="@{/logout}">Logout</a>
         </nav>
@@ -32,12 +32,15 @@
             </form>
         </div>
     </section>
-    <section class="container studentArea">
+    <div class="container studentArea text-center" style="margin-top: 100px; background: white" th:if="${noOfFloorMates} != null" >
+        <h3 th:text="'Students in this floor: '+${noOfFloorMates}"></h3>
+    </div>
+    <section class="container studentArea" style="margin-top: 50px; background: white" >
         <table class="table table-hover">
             <thead>
             <tr>
                 <th style="text-align: center;">No. </th>
-                <th style="text-align: center;">Names</th>
+                <th>Names</th>
             </tr>
             </thead>
             <tbody id="body" style="background-color: whitesmoke;">

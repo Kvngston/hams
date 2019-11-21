@@ -35,6 +35,7 @@ public class FloorDetailsController {
         List<Student> studentsOfFloor = studentRepository.findAllByFloor(mainFloor);
 
         model.addAttribute("studentsOfFloor", studentsOfFloor);
+        model.addAttribute("noOfFloorMates", studentsOfFloor.size());
         model.addAttribute("notEmpty", true);
         return "ViewFloorDetails";
     }

@@ -7,32 +7,51 @@
     <link href="css/style.css" type="text/css" rel="stylesheet"/>
 
 </head>
-<body style="padding: 0; margin: 0px;" class="container-fluid">
+<body style="padding: 0; margin: 0; background: url('https://res.cloudinary.com/dm9m9lutv/image/upload/c_scale,e_blur:1104,h_743,w_1366/v1574085456/IMG_E4216_sxhjbx.png') no-repeat" class="container-fluid">
 <header class="col-md-12" style="background: black">
     <nav class="nav navbar">
-        <h2 class="text-primary">Nnamdi Azikiwe Hostels Admin portal</h2>
+        <h2 class="text-white">Nnamdi Azikiwe Hostels Admin portal</h2>
         <a class="text-white pull-right" th:href="@{/logout}">Logout</a>
     </nav>
 </header>
-<section class="col-md-12 row" style="height: 100%;">
-    <aside class="col-md-3" style="background: black;">
-        <div class="col-md-12">
-            <h3 class="text-white">DashBoard</h3>
+<section class="container" style="height: 580px; padding-right: 0">
+    <div class="studentArea row" style="background: white; padding: 0;">
+        <div class="col-md-3" style="height: inherit;">
+            <figure class="figure col-md-12">
+                <img style="margin-left: 25%; margin-top: 100%" src="https://res.cloudinary.com/dm9m9lutv/image/upload/v1574262968/unizikLogo_njgybk.png">
+                <figcaption style="font-size: 20px;" class="text-center">Dashboard</figcaption>
+            </figure>
         </div>
-    </aside>
-    <div class="col-md-9" style="background: white;">
-        <div class="row">
-            <div class="col-md-4 dashboardBackgrounds">
-                <a style="color: white" th:href="@{/viewStudentDetails}"><h2 style="margin-top: 25%;">Review A Student</h2></a>
-            </div>
-            <div class="col-md-4 dashboardBackgrounds">
-                <a style="color: white" th:href="@{/viewRoom}"><h2 style="margin-top: 25%;">Check Room Details</h2></a>
-            </div>
-            <div class="col-md-4 dashboardBackgrounds">
-                <a style="color: white" th:href="@{/viewFloorDetails}"><h2 style="margin-top: 25%;">View Floor Details</h2></a>
-            </div>
-            <div class="col-md-4 dashboardBackgrounds">
-                <a style="color: white" th:href="@{/viewComplaints}"><h2 style="margin-top: 25%;">View Complaints</h2></a>
+        <div class="col-md-9 row" style="background: white; height: 100%">
+            <div class="col-md-12">
+                <div style="height: 50%" class="row">
+                    <div class="col-md-6 dashboardBackgrounds">
+                        <div class="dashboardIcons">
+                            <a th:href="@{/viewStudentDetails}" style="color: black; "><img style="margin-top: 25%" height="75px" width="75px" src="https://res.cloudinary.com/dm9m9lutv/image/upload/v1574289210/users-solid_lq13z7.svg">
+                                <h2>Review A Student</h2></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 dashboardBackgrounds">
+                        <div class="dashboardIcons">
+                            <a th:href="@{/viewRoom}" style="color: black; "><img style="margin-top: 25%" height="75px" width="75px" src="https://res.cloudinary.com/dm9m9lutv/image/upload/v1574289316/door-closed-solid_eleb05.svg">
+                                <h2>Check Room Details</h2></a>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 50%" class="row">
+                    <div class="col-md-6 dashboardBackgrounds">
+                        <div class="dashboardIcons">
+                            <a th:href="@{/viewFloorDetails}" style="color: black; "><img style="margin-top: 25%" height="75px" width="75px" src="https://res.cloudinary.com/dm9m9lutv/image/upload/v1574289787/building-regular_y13nex.svg">
+                                <h2>View Floor Details</h2></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 dashboardBackgrounds">
+                        <div class="dashboardIcons">
+                            <a th:href="@{/viewComplaints}" style="color: black; "><img style="margin-top: 25%" height="75px" width="75px" src="https://res.cloudinary.com/dm9m9lutv/image/upload/v1574289877/exclamation-solid_rhzruu.svg">
+                                <h2>View Complaints</h2></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
